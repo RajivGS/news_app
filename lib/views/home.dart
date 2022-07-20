@@ -15,9 +15,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("News App"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("News App"),
+      // ),
       body: FutureBuilder(
         future: client.getArticle(),
         builder: ((context, AsyncSnapshot<List<Article>> snapshot) {

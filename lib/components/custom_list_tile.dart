@@ -5,9 +5,12 @@ Widget customListTile(Article article) {
   return InkWell(
     onTap: () {},
     child: Container(
+      //   height: 400,
       margin: const EdgeInsets.all(12.0),
       padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
+          image: const DecorationImage(
+              image: AssetImage("assets/background.png"), fit: BoxFit.fill),
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
           boxShadow: const [
@@ -21,18 +24,19 @@ Widget customListTile(Article article) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 200.0,
+            margin: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+            padding: const EdgeInsets.fromLTRB(15, 30, 15, 0),
+            height: 140.0,
             width: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(article.urlToImage),
-                fit: BoxFit.cover,
-              ),
+                  image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(8.0),
             ),
           ),
           const SizedBox(height: 8.0),
           Container(
+            margin: const EdgeInsets.only(left: 30),
             padding: const EdgeInsets.all(6.0),
             decoration: BoxDecoration(
               color: Colors.red,
@@ -44,9 +48,13 @@ Widget customListTile(Article article) {
             ),
           ),
           const SizedBox(height: 8.0),
-          Text(
-            article.title,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          Container(
+            margin: const EdgeInsets.fromLTRB(30, 1, 30, 25),
+            padding: const EdgeInsets.fromLTRB(15, 1, 15, 10),
+            child: Text(
+              article.title,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
           )
         ],
       ),
